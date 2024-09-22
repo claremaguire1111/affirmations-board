@@ -1,15 +1,23 @@
 body {
   text-align: center;
-  background: #ffffff;
+  background: linear-gradient(135deg, #ffcaf7, #a0d9ff); /* Bright pastel gradient background */
   font-family: "Libre Franklin", sans-serif;
+  color: #333;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 3.5rem; /* Larger, bolder font size */
   color: #000;
-  font-family: Libre Franklin", sans-serif;
-  text-decoration: underline;
-  text-decoration-color: #07c0e6;
+  font-family: "Libre Franklin", sans-serif;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #ff85a1, #07c0e6); /* Gradient text effect */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Text gradient */
 }
 
 p,
@@ -17,6 +25,10 @@ ul li {
   color: #000;
   font-size: 1.2rem;
   width: 100%;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-transform: capitalize;
+  font-family: "Poppins", sans-serif; /* Adding a playful font */
 }
 
 ul {
@@ -27,41 +39,41 @@ ul {
 header,
 main,
 footer {
-  /* Add a Flexbox property to make the content-wrapper a flex parent container. */
-   display: flex;
-   justify-content: center;
-  /* Add a Flexbox property to center the contents of each section. */
+  display: flex;
+  justify-content: center;
   width: 100%;
 }
 
 .content-wrapper {
   width: 90%;
   max-width: 1200px;
-  /* Add a Flexbox property to make the content-wrapper a flex parent container. */
   display: flex;
-  /* Add a Flexbox property to allow the flex child items to wrap. */
   flex-wrap: wrap;
-  /* Add a Flexbox property to center the contents of each section. */
   justify-content: center;
-
+  gap: 30px; /* Larger gaps for a spacious feel */
+  margin-bottom: 2rem;
 }
 
 main .content-wrapper {
-  /* Add the gap property with a value of 20px to create space between the rows and columns. */
-  gap: 20px;
-
+  gap: 30px;
 }
 
 .affirmation-block {
-  border-radius: 5px;
+  border-radius: 15px; /* More rounded for a softer look */
   width: 100%;
-  background: #CCCCCC;
-  /* Add a Flexbox property to make every block with text a flex parent container. */
+  background: #ffffff; /* Clean white background */
   display: flex;
-  /* Add a Flexbox property to align the text in each block at its center. */
   align-items: center;
-  padding: 10px;
-  border: 1px solid #A60505;
+  padding: 30px;
+  border: 3px solid #ff85a1; /* Bright contrasting border */
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1); /* Elevated shadow */
+}
+
+.affirmation-block:hover {
+  transform: translateY(-10px); /* Slight hover lift */
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  background: linear-gradient(135deg, #ff85a1, #ffcaf7); /* Gradient on hover */
 }
 
 .gif-block {
@@ -70,7 +82,49 @@ main .content-wrapper {
 
 img {
   width: 100%;
-  border-radius: 5px;
+  border-radius: 15px; /* Sleek rounded corners */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow around images */
+  transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+  transform: scale(1.05); /* Subtle zoom effect on hover */
+}
+
+button {
+  font-family: "Poppins", sans-serif;
+  background-color: #07c0e6;
+  color: #fff;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 50px; /* Rounded pill buttons */
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0px 8px 15px rgba(7, 192, 230, 0.4); /* Button shadow */
+}
+
+button:hover {
+  background-color: #ff85a1; /* Hover state color */
+  transform: translateY(-5px); /* Lift on hover */
+}
+
+button:active {
+  background-color: #ff6183;
+  transform: translateY(1px);
+}
+
+footer {
+  padding: 2rem 0;
+  background: #f7f7f7;
+}
+
+footer p {
+  color: #666;
+  font-size: 1rem;
+  text-transform: uppercase;
 }
 
 .copyright {
@@ -79,37 +133,30 @@ img {
 }
 
 @media (min-width: 768px) {
-
   html,
   body {
     height: 100%;
   }
 
   .center-wrapper {
-    /* Add a Flexbox property to make the content-wrapper a flex parent container. */
     display: flex;
-    /* Add a Flexbox property to allow the flex child items to wrap. */
     flex-wrap: wrap;
-    /* Add the Flexbox property align-content with a value of space-around to space the content vertically. */
     align-content: space-around;
     height: 100%;
     width: 100%;
-    gap: 20px;
+    gap: 30px; /* Increase spacing */
   }
 
   .affirmation-block {
     width: 45%;
-  
   }
 
   .gif-block {
     width: 48%;
   }
-
 }
 
 @media (min-width: 1200px) {
-
   .affirmation-block {
     width: 30%;
   }
@@ -118,3 +165,4 @@ img {
     width: 31.8%;
   }
 }
+
